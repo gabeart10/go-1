@@ -2,7 +2,6 @@ package main
 
 import (
   "bufio"
-  "fmt"
   "os"
 )
 func main() {
@@ -14,6 +13,6 @@ func main() {
     println(err)
     os.Exit(1)
   }
-  fmt.Print("Hello " + line)
+  println("Hello " + line)
 
 }
