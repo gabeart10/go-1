@@ -3,16 +3,17 @@ package main
 import (
   "bufio"
   "os"
+  "fmt"
 )
 func main() {
   r := bufio.NewReader(os.Stdin)
 
-  println("What is your name?")
+  fmt.println("What is your name?")
   line, err := r.ReadString('\n')
   if err != nil {
-    println(err)
+    fmt.println(err)
     os.Exit(1)
   }
-  println("Hello " + line)
+  fmt.Print("Hello " + line)
 
 }

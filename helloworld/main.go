@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
-
+import (
+	"fmt"
+	c "github.com/gabeart10/go-1/colors"
+)
 func main() {
-  fmt.Printf("hello, world\n")
+  fmt.Println(c.y + "hello, world\n")
 }
