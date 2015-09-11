@@ -3,7 +3,8 @@ package main
 import (
 	"time"
 	"fmt"
-	//c "github.com/gabeart10/go-1/colors"
+	"strconv"
+	c "github.com/gabeart10/go-1/colors"
 )
 
 func main() {
@@ -14,14 +15,19 @@ func main() {
 	day := 0
 	week := 0
 	for {
-		fmt.Print("Millisecond: " + string(msec) + "\n")
-		fmt.Println("Second: " + string(sec) + "\n")
-		fmt.Println("Minute: " + string(min) + "\n")
-		fmt.Println("Hour: " + string(hour) + "\n")
-		fmt.Println("Day: " + string(day) + "\n")
-		fmt.Println("Week: " + string(week))
+		fmt.Print("Millisecond: " + strconv.Itoa(msec) + "\n")
+		fmt.Println("Second: " + strconv.Itoa(sec) + "\n")
+		fmt.Println("Minute: " + strconv.Itoa(min) + "\n")
+		fmt.Println("Hour: " + strconv.Itoa(hour) + "\n")
+		fmt.Println("Day: " + strconv.Itoa(day) + "\n")
+		fmt.Println("Week: " + strconv.Itoa(week))
 		msec += 1
-		time.Sleep(0.001)
+		time.Sleep(time.Millisecond)
+		if msec == 1000 {
+			sec += 1
+			msec -= 1000
+		}
+		fmt.Print(
 	}
 }	
 	
