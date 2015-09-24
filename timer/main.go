@@ -15,7 +15,7 @@ func main() {
 	day := 0
 	week := 0
 	for {
-		fmt.Print("Millisecond: " + strconv.Itoa(msec) + "\n")
+		fmt.Println("Millisecond: " + strconv.Itoa(msec) + "\n")
 		fmt.Println("Second: " + strconv.Itoa(sec) + "\n")
 		fmt.Println("Minute: " + strconv.Itoa(min) + "\n")
 		fmt.Println("Hour: " + strconv.Itoa(hour) + "\n")
@@ -27,7 +27,7 @@ func main() {
 			sec += 1
 			msec -= 1000
 		}
-		fmt.Print(
+		fmt.Print(c.Clear)
 	}
 }	
 	

@@ -4,6 +4,7 @@ import (
 	"math/rand"
 	"bufio"
 	"os"
+	"strings"
 	c "github.com/gabeart10/go-1/colors"
 )
 
@@ -13,12 +14,13 @@ func main() {
 		fmt.Print(c.Clear)
 		fmt.Println(c.Yellow + "What do you want to know?" + c.Reset)
 		fmt.Print(c.Red)
-		_, err := r.ReadString('\n')
+		text, err := r.ReadString('\n')
 		fmt.Print(c.Reset)
 		if err != nil {
 			fmt.Println(err)
 			os.Exit(1)
 		}
+		text = strings.TrimSpace(text)
 		answers := []string{
 			"It is certain",
 			"It is decidedly so",
@@ -41,8 +43,14 @@ func main() {
 			"Outlook not so good",
 			"Very doubtful",
 		}
-		color := c.random_color()
-		fmt.Println(color + answers[rand.Intn(len(answers))] + c.Reset)
+		color := c.Random_color()
+		if strings.Contains(text, "die") {
+			fmt.Println(color + "Yes you will die!" + c.Reset)
+		} else if strings.Contains(text, "love") {
+			fmt.Println(color + "Love you wish!" + c.Reset)
+		} else {	
+			fmt.Println(color + answers[rand.Intn(len(answers))] + c.Reset)
+		}
 		_, err_new := r.ReadString('\n')
 		if err_new != nil {
 			fmt.Println(err_new)
